@@ -16,8 +16,8 @@ select.innerHTML="";
 
 funcionarios.forEach(f => {
 
-let option = document.createElement("option");
-option.textContent = f;
+let option=document.createElement("option");
+option.textContent=f;
 
 select.appendChild(option);
 
@@ -27,9 +27,9 @@ select.appendChild(option);
 
 function adicionarFuncionario(){
 
-let nome = document.getElementById("nomeFuncionario").value;
+let nome=document.getElementById("nomeFuncionario").value;
 
-if(nome == "") return;
+if(nome=="") return;
 
 funcionarios.push(nome);
 
@@ -40,15 +40,15 @@ atualizarSelect();
 
 }
 
-function horaAtual(){
+function hora(){
 
-let agora = new Date();
+let d=new Date();
 
-return agora.getHours()+":"+agora.getMinutes();
+return d.getHours()+":"+d.getMinutes();
 
 }
 
-function dataAtual(){
+function data(){
 
 return new Date().toLocaleDateString();
 
@@ -56,13 +56,13 @@ return new Date().toLocaleDateString();
 
 function registrarEntrada(){
 
-let nome = document.getElementById("funcionarioSelect").value;
+let nome=document.getElementById("funcionarioSelect").value;
 
 registros.push({
 
 nome:nome,
-data:dataAtual(),
-entrada:horaAtual(),
+data:data(),
+entrada:hora(),
 saida:""
 
 });
@@ -74,17 +74,17 @@ render();
 
 function registrarSaida(){
 
-let nome = document.getElementById("funcionarioSelect").value;
+let nome=document.getElementById("funcionarioSelect").value;
 
-for(let r of registros){
+registros.forEach(r=>{
 
-if(r.nome == nome && r.saida == ""){
+if(r.nome==nome && r.saida==""){
 
-r.saida = horaAtual();
-
-}
+r.saida=hora();
 
 }
+
+});
 
 salvar();
 render();
@@ -93,13 +93,13 @@ render();
 
 function render(){
 
-let tabela = document.getElementById("tabelaRegistros");
+let tabela=document.getElementById("tabelaRegistros");
 
 tabela.innerHTML="";
 
-registros.forEach(r => {
+registros.forEach(r=>{
 
-tabela.innerHTML += `
+tabela.innerHTML+=`
 
 <tr>
 
@@ -113,6 +113,50 @@ tabela.innerHTML += `
 `;
 
 });
+
+}
+
+function gerarRelatorio(){
+
+let mesAtual=new Date().getMonth()+1;
+
+let relatorio=registros.filter(r=>{
+
+let partes=r.data.split("/");
+
+return parseInt(partes[1])==mesAtual;
+
+});
+
+alert("Registros deste mês: "+relatorio.length);
+
+}
+
+function exportarPDF(){
+
+const { jsPDF } = window.jspdf;
+
+let doc=new jsPDF();
+
+doc.text("Relatório de Ponto - Escola",20,20);
+
+let y=40;
+
+registros.forEach(r=>{
+
+doc.text(
+
+`${r.nome} | ${r.data} | Entrada: ${r.entrada} | Saída: ${r.saida}`,
+
+20,y
+
+);
+
+y+=10;
+
+});
+
+doc.save("relatorio_ponto.pdf");
 
 }
 
