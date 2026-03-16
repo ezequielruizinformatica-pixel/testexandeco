@@ -9,23 +9,42 @@
 <link rel="stylesheet" href="style.css">
 
 <script src="jspdf.min.js"></script>
+<script src="jspdf.plugin.autotable.min.js"></script>
 
 </head>
 
 <body>
 
-<div class="app">
+<div class="container">
+
+<aside class="menu">
+
+<h2>🏫 Escola</h2>
+
+<ul>
+
+<li>Painel</li>
+<li>Funcionários</li>
+<li>Registros</li>
+<li>Relatórios</li>
+
+</ul>
+
+</aside>
+
+
+<main class="dashboard">
 
 <header>
 
-<h1>🏫 Controle de Ponto</h1>
+<h1>Sistema de Controle de Ponto</h1>
 
 </header>
 
 
 <section class="card">
 
-<h2>Cadastro de Funcionário</h2>
+<h2>Cadastrar Funcionário</h2>
 
 <input type="text" id="nomeFuncionario" placeholder="Nome do funcionário">
 
@@ -40,24 +59,9 @@
 
 <select id="funcionarioSelect"></select>
 
-<div class="botoes">
-
 <button class="entrada" onclick="registrarEntrada()">Entrada</button>
 
 <button class="saida" onclick="registrarSaida()">Saída</button>
-
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>Relatório</h2>
-
-<button class="relatorio" onclick="gerarRelatorio()">Gerar Relatório Mensal</button>
-
-<button class="pdf" onclick="exportarPDF()">Exportar PDF</button>
 
 </section>
 
@@ -87,9 +91,21 @@
 
 </section>
 
+
+<section class="card">
+
+<h2>Relatórios</h2>
+
+<button class="pdf" onclick="exportarPDF()">Exportar PDF</button>
+
+</section>
+
+</main>
+
 </div>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
