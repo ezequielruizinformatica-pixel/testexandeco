@@ -4,32 +4,37 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Sistema de Ponto - Escola</title>
+<title>Controle de Ponto Escolar</title>
 
 <link rel="stylesheet" href="style.css">
+
+<script src="jspdf.min.js"></script>
 
 </head>
 
 <body>
 
+<div class="app">
+
 <header>
 
-<h1>🏫 Sistema de Controle de Ponto</h1>
-<p>Funcionários da Escola</p>
+<h1>🏫 Controle de Ponto</h1>
 
 </header>
 
-<section class="painel">
 
-<h2>Cadastrar Funcionário</h2>
+<section class="card">
+
+<h2>Cadastro de Funcionário</h2>
 
 <input type="text" id="nomeFuncionario" placeholder="Nome do funcionário">
+
 <button onclick="adicionarFuncionario()">Cadastrar</button>
 
 </section>
 
 
-<section class="ponto">
+<section class="card">
 
 <h2>Registrar Ponto</h2>
 
@@ -37,18 +42,29 @@
 
 <div class="botoes">
 
-<button class="entrada" onclick="registrarEntrada()">Registrar Entrada</button>
+<button class="entrada" onclick="registrarEntrada()">Entrada</button>
 
-<button class="saida" onclick="registrarSaida()">Registrar Saída</button>
+<button class="saida" onclick="registrarSaida()">Saída</button>
 
 </div>
 
 </section>
 
 
-<section class="registros">
+<section class="card">
 
-<h2>Histórico de Registros</h2>
+<h2>Relatório</h2>
+
+<button class="relatorio" onclick="gerarRelatorio()">Gerar Relatório Mensal</button>
+
+<button class="pdf" onclick="exportarPDF()">Exportar PDF</button>
+
+</section>
+
+
+<section class="card">
+
+<h2>Registros</h2>
 
 <table>
 
@@ -65,16 +81,15 @@
 
 </thead>
 
-<tbody id="tabelaRegistros">
-
-</tbody>
+<tbody id="tabelaRegistros"></tbody>
 
 </table>
 
 </section>
 
+</div>
+
 <script src="script.js"></script>
 
 </body>
-
 </html>
