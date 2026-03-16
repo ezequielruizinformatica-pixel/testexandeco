@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Sistema de Pontos da Turma</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<h1>🏆 Sistema de Pontos da Turma</h1>
+
+<div class="container">
+
+<div class="add">
+<input type="text" id="nomeAluno" placeholder="Nome do aluno">
+<button onclick="adicionarAluno()">Adicionar</button>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Aluno</th>
+<th>Pontos</th>
+<th>Ações</th>
+</tr>
+</thead>
+
+<tbody id="listaAlunos">
+</tbody>
+
+</table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
