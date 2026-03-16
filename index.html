@@ -1,39 +1,80 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Sistema de Pontos da Turma</title>
+<title>Sistema de Ponto - Escola</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<h1>🏆 Sistema de Pontos da Turma</h1>
+<header>
 
-<div class="container">
+<h1>🏫 Sistema de Controle de Ponto</h1>
+<p>Funcionários da Escola</p>
 
-<div class="add">
-<input type="text" id="nomeAluno" placeholder="Nome do aluno">
-<button onclick="adicionarAluno()">Adicionar</button>
+</header>
+
+<section class="painel">
+
+<h2>Cadastrar Funcionário</h2>
+
+<input type="text" id="nomeFuncionario" placeholder="Nome do funcionário">
+<button onclick="adicionarFuncionario()">Cadastrar</button>
+
+</section>
+
+
+<section class="ponto">
+
+<h2>Registrar Ponto</h2>
+
+<select id="funcionarioSelect"></select>
+
+<div class="botoes">
+
+<button class="entrada" onclick="registrarEntrada()">Registrar Entrada</button>
+
+<button class="saida" onclick="registrarSaida()">Registrar Saída</button>
+
 </div>
 
+</section>
+
+
+<section class="registros">
+
+<h2>Histórico de Registros</h2>
+
 <table>
+
 <thead>
+
 <tr>
-<th>Aluno</th>
-<th>Pontos</th>
-<th>Ações</th>
+
+<th>Funcionário</th>
+<th>Data</th>
+<th>Entrada</th>
+<th>Saída</th>
+
 </tr>
+
 </thead>
 
-<tbody id="listaAlunos">
+<tbody id="tabelaRegistros">
+
 </tbody>
 
 </table>
 
-</div>
+</section>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
