@@ -1,55 +1,114 @@
-
 body{
-font-family: Arial;
-background: linear-gradient(135deg,#4facfe,#00f2fe);
-text-align:center;
+
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:linear-gradient(135deg,#1d2671,#c33764);
 color:white;
+
 }
 
-h1{
-margin-top:20px;
+header{
+
+text-align:center;
+padding:30px;
+background:rgba(0,0,0,0.2);
+
 }
 
-.container{
-width:70%;
-margin:auto;
+header h1{
+
+margin:0;
+
+}
+
+section{
+
+width:80%;
+margin:20px auto;
 background:white;
 color:black;
 padding:20px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+
 }
 
-input{
+h2{
+
+margin-top:0;
+
+}
+
+input, select{
+
 padding:10px;
-border-radius:5px;
+border-radius:6px;
 border:1px solid #ccc;
+margin-right:10px;
+
 }
 
 button{
-padding:10px;
+
+padding:10px 15px;
 border:none;
-border-radius:5px;
-background:#4CAF50;
-color:white;
+border-radius:6px;
 cursor:pointer;
+font-weight:bold;
+
+}
+
+.entrada{
+
+background:#2ecc71;
+color:white;
+
+}
+
+.saida{
+
+background:#e74c3c;
+color:white;
+
 }
 
 button:hover{
-background:#45a049;
+
+opacity:0.8;
+
 }
 
 table{
+
 width:100%;
-margin-top:20px;
 border-collapse:collapse;
+margin-top:20px;
+
 }
 
-th,td{
+th{
+
+background:#1d2671;
+color:white;
+padding:10px;
+
+}
+
+td{
+
 padding:10px;
 border-bottom:1px solid #ddd;
+
 }
 
 tr:hover{
-background:#f1f1f1;
+
+background:#f2f2f2;
+
+}
+
+.botoes{
+
+margin-top:10px;
+
 }
