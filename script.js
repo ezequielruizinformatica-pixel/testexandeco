@@ -10,11 +10,11 @@ localStorage.setItem("registros", JSON.stringify(registros));
 
 function atualizarSelect(){
 
-let select = document.getElementById("funcionarioSelect");
+let select=document.getElementById("funcionarioSelect");
 
 select.innerHTML="";
 
-funcionarios.forEach(f => {
+funcionarios.forEach(f=>{
 
 let option=document.createElement("option");
 option.textContent=f;
@@ -116,43 +116,34 @@ tabela.innerHTML+=`
 
 }
 
-function gerarRelatorio(){
-
-let mesAtual=new Date().getMonth()+1;
-
-let relatorio=registros.filter(r=>{
-
-let partes=r.data.split("/");
-
-return parseInt(partes[1])==mesAtual;
-
-});
-
-alert("Registros deste mês: "+relatorio.length);
-
-}
-
 function exportarPDF(){
 
 const { jsPDF } = window.jspdf;
 
-let doc=new jsPDF();
+let doc = new jsPDF();
 
-doc.text("Relatório de Ponto - Escola",20,20);
+doc.text("Relatório de Controle de Ponto",14,20);
 
-let y=40;
+let dados=[];
 
 registros.forEach(r=>{
 
-doc.text(
+dados.push([
 
-`${r.nome} | ${r.data} | Entrada: ${r.entrada} | Saída: ${r.saida}`,
+r.nome,
+r.data,
+r.entrada,
+r.saida
 
-20,y
+]);
 
-);
+});
 
-y+=10;
+doc.autoTable({
+
+head:[["Funcionário","Data","Entrada","Saída"]],
+body:dados,
+startY:30
 
 });
 
