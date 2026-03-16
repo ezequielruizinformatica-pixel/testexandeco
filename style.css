@@ -1,50 +1,45 @@
 body{
 
-font-family: Arial, Helvetica, sans-serif;
 margin:0;
-background:linear-gradient(135deg,#1d2671,#c33764);
-color:white;
+font-family:Segoe UI;
+background:#f0f2f5;
+
+}
+
+.app{
+
+max-width:900px;
+margin:auto;
+padding:20px;
 
 }
 
 header{
 
-text-align:center;
-padding:30px;
-background:rgba(0,0,0,0.2);
-
-}
-
-header h1{
-
-margin:0;
-
-}
-
-section{
-
-width:80%;
-margin:20px auto;
-background:white;
-color:black;
+background:#2c3e50;
+color:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
+text-align:center;
+margin-bottom:20px;
 
 }
 
-h2{
+.card{
 
-margin-top:0;
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 
 }
 
-input, select{
+input,select{
 
 padding:10px;
 border-radius:6px;
 border:1px solid #ccc;
-margin-right:10px;
 
 }
 
@@ -55,12 +50,13 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 font-weight:bold;
+margin-left:5px;
 
 }
 
 .entrada{
 
-background:#2ecc71;
+background:#27ae60;
 color:white;
 
 }
@@ -72,23 +68,31 @@ color:white;
 
 }
 
-button:hover{
+.relatorio{
 
-opacity:0.8;
+background:#2980b9;
+color:white;
+
+}
+
+.pdf{
+
+background:#8e44ad;
+color:white;
 
 }
 
 table{
 
 width:100%;
+margin-top:15px;
 border-collapse:collapse;
-margin-top:20px;
 
 }
 
 th{
 
-background:#1d2671;
+background:#34495e;
 color:white;
 padding:10px;
 
@@ -103,12 +107,6 @@ border-bottom:1px solid #ddd;
 
 tr:hover{
 
-background:#f2f2f2;
-
-}
-
-.botoes{
-
-margin-top:10px;
+background:#f5f5f5;
 
 }
