@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+
+<meta charset="UTF-8">
+<title>Painel Administrativo</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<aside class="menu">
+
+<h2>🏫 Administração</h2>
+
+<ul>
+
+<li>Painel</li>
+<li>Registros</li>
+<li>Relatórios</li>
+
+</ul>
+
+</aside>
+
+
+<main class="dashboard">
+
+<header>
+
+<h1>Sistema de Controle de Ponto</h1>
+
+<p id="usuarioLogado"></p>
+
+<button onclick="logout()">Sair</button>
+
+</header>
+
+
+<section class="card">
+
+<h2>Registros de Funcionários</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Funcionário</th>
+<th>Data</th>
+<th>Entrada</th>
+<th>Saída</th>
+</tr>
+
+</thead>
+
+<tbody id="tabelaRegistros"></tbody>
+
+</table>
+
+</section>
+
+
+<section class="card">
+
+<h2>Relatórios</h2>
+
+<button onclick="exportarPDF()">Exportar relatório PDF</button>
+
+<button onclick="limparHistorico()" style="background:#e74c3c;color:white;margin-left:10px;">
+Limpar Histórico
+</button>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
