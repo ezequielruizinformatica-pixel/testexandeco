@@ -122,34 +122,29 @@ const { jsPDF } = window.jspdf;
 
 let doc = new jsPDF();
 
-doc.text("Relatório de Controle de Ponto",14,20);
+doc.text("Relatório de Controle de Ponto", 14, 20);
 
-let dados=[];
+let dados = [];
 
-registros.forEach(r=>{
+registros.forEach(r => {
 
 dados.push([
-
 r.nome,
 r.data,
 r.entrada,
 r.saida
-
 ]);
 
 });
 
 doc.autoTable({
-
-head:[["Funcionário","Data","Entrada","Saída"]],
-body:dados,
-startY:30
-
+head: [["Funcionário", "Data", "Entrada", "Saída"]],
+body: dados,
+startY: 30
 });
 
 doc.save("relatorio_ponto.pdf");
 
 }
-
 atualizarSelect();
 render();
