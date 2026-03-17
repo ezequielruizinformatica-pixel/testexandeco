@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="style.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
 
 </head>
@@ -40,6 +39,8 @@
 
 <h1>Sistema de Controle de Ponto</h1>
 
+<p id="usuarioLogado"></p>
+
 </header>
 
 
@@ -47,7 +48,7 @@
 
 <h2>Cadastrar Funcionário</h2>
 
-<input type="text" id="nomeFuncionario" placeholder="Nome do funcionário">
+<input type="text" id="inputFuncionario" placeholder="Nome do funcionário">
 
 <button onclick="adicionarFuncionario()">Cadastrar</button>
 
@@ -57,8 +58,6 @@
 <section class="card">
 
 <h2>Painel do Funcionário</h2>
-
-<p id="nomeFuncionario"></p>
 
 <div class="botoes">
 
@@ -77,6 +76,7 @@ Sair
 </div>
 
 </section>
+
 
 <section class="card">
 
@@ -111,6 +111,7 @@ Sair
 <button onclick="exportarPDF()">
 Exportar relatório PDF
 </button>
+
 </section>
 
 </main>
