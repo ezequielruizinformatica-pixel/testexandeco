@@ -1,13 +1,11 @@
-const { jsPDF } = window.jspdf;
-
 let registros = JSON.parse(localStorage.getItem("registros")) || [];
 
 /* FUNCIONÁRIOS PARA LOGIN */
 
 let funcionarios = [
 
-{usuario:"maria", senha:"123", nome:"Maria Silva"},
-{usuario:"joao", senha:"123", nome:"João Santos"}
+{usuario:"Alexandre", senha:"123", nome:"Alexandre Ferreira do Nascimento"},
+{usuario:"Roseane", senha:"123", nome:"Roseane Bastos Ferreira"}
 
 ];
 
@@ -153,6 +151,8 @@ tabela.innerHTML += `
 
 function exportarPDF(){
 
+const { jsPDF } = window.jspdf;
+
 let doc = new jsPDF();
 
 doc.text("Relatório de Controle de Ponto", 14, 20);
@@ -162,22 +162,18 @@ let dados = [];
 registros.forEach(r => {
 
 dados.push([
-
 r.nome,
 r.data,
 r.entrada,
 r.saida
-
 ]);
 
 });
 
 doc.autoTable({
-
 head:[["Funcionário","Data","Entrada","Saída"]],
 body:dados,
 startY:30
-
 });
 
 doc.save("relatorio_ponto.pdf");
