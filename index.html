@@ -4,69 +4,111 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Controle de Ponto Escolar</title>
+<title>Sistema de Ponto Escolar</title>
 
 <link rel="stylesheet" href="style.css">
 
-<script src="jspdf.min.js"></script>
-<script src="jspdf.plugin.autotable.min.js"></script>
+<script src="libs/chart.js"></script>
+<script src="libs/jspdf.min.js"></script>
+<script src="libs/autotable.js"></script>
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="layout">
 
-<aside class="menu">
+<!-- Sidebar -->
+
+<div class="sidebar">
 
 <h2>🏫 Escola</h2>
 
 <ul>
 
-<li>Painel</li>
+<li>Dashboard</li>
 <li>Funcionários</li>
-<li>Registros</li>
+<li>Registrar Ponto</li>
 <li>Relatórios</li>
 
 </ul>
 
-</aside>
+</div>
 
 
-<main class="dashboard">
+<!-- Conteúdo -->
+
+<div class="content">
 
 <header>
 
-<h1>Sistema de Controle de Ponto</h1>
+<h1>Controle de Ponto</h1>
 
 </header>
 
 
-<section class="card">
+<!-- Cards -->
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Funcionários</h3>
+<p id="totalFuncionarios">0</p>
+
+</div>
+
+<div class="card">
+
+<h3>Registros Hoje</h3>
+<p id="registrosHoje">0</p>
+
+</div>
+
+</div>
+
+
+<!-- Cadastro -->
+
+<div class="box">
 
 <h2>Cadastrar Funcionário</h2>
 
-<input type="text" id="nomeFuncionario" placeholder="Nome do funcionário">
+<input id="nomeFuncionario" placeholder="Nome do funcionário">
 
 <button onclick="adicionarFuncionario()">Cadastrar</button>
 
-</section>
+</div>
 
 
-<section class="card">
+<!-- Registrar ponto -->
+
+<div class="box">
 
 <h2>Registrar Ponto</h2>
 
 <select id="funcionarioSelect"></select>
 
 <button class="entrada" onclick="registrarEntrada()">Entrada</button>
-
 <button class="saida" onclick="registrarSaida()">Saída</button>
 
-</section>
+</div>
 
 
-<section class="card">
+<!-- Gráfico -->
+
+<div class="box">
+
+<h2>Horas Trabalhadas</h2>
+
+<canvas id="grafico"></canvas>
+
+</div>
+
+
+<!-- Tabela -->
+
+<div class="box">
 
 <h2>Registros</h2>
 
@@ -89,18 +131,18 @@
 
 </table>
 
-</section>
+</div>
 
 
-<section class="card">
+<!-- PDF -->
 
-<h2>Relatórios</h2>
+<div class="box">
 
-<button class="pdf" onclick="exportarPDF()">Exportar PDF</button>
+<button onclick="exportarPDF()">Exportar Relatório PDF</button>
 
-</section>
+</div>
 
-</main>
+</div>
 
 </div>
 
