@@ -8,8 +8,8 @@
 
 <link rel="stylesheet" href="style.css">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+<script src="jspdf.min.js"></script>
+<script src="jspdf.plugin.autotable.min.js"></script>
 
 </head>
 
@@ -23,7 +23,7 @@
 
 <ul>
 
-<li>Dashboard</li>
+<li>Painel</li>
 <li>Funcionários</li>
 <li>Registros</li>
 <li>Relatórios</li>
@@ -31,6 +31,7 @@
 </ul>
 
 </aside>
+
 
 <main class="dashboard">
 
@@ -40,26 +41,12 @@
 
 </header>
 
-<div class="cards">
-
-<div class="card">
-<h3>Total Funcionários</h3>
-<p id="totalFuncionarios">0</p>
-</div>
-
-<div class="card">
-<h3>Registros Hoje</h3>
-<p id="registrosHoje">0</p>
-</div>
-
-</div>
-
 
 <section class="card">
 
 <h2>Cadastrar Funcionário</h2>
 
-<input id="nomeFuncionario" placeholder="Nome">
+<input type="text" id="nomeFuncionario" placeholder="Nome do funcionário">
 
 <button onclick="adicionarFuncionario()">Cadastrar</button>
 
@@ -107,9 +94,9 @@
 
 <section class="card">
 
-<button class="pdf" onclick="exportarPDF()">
-Exportar relatório PDF
-</button>
+<h2>Relatórios</h2>
+
+<button class="pdf" onclick="exportarPDF()">Exportar PDF</button>
 
 </section>
 
@@ -120,4 +107,5 @@ Exportar relatório PDF
 <script src="script.js"></script>
 
 </body>
+
 </html>
