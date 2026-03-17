@@ -51,25 +51,21 @@ let usuarioLogado = localStorage.getItem("usuarioLogado");
 
 if(!usuarioLogado){
 
-if(!window.location.pathname.includes("login.html")){
-
-window.location.href = "login.html";
-
-}
+    // se não estiver logado e não estiver na página de login
+    if(!window.location.pathname.includes("login.html")){
+        window.location.href = "login.html";
+    }
 
 }else{
 
-let el = document.getElementById("usuarioLogado");
+    // mostrar nome do funcionário no painel
+    let el = document.getElementById("usuarioLogado");
 
-if(el){
-
-el.innerText = "Funcionário: " + usuarioLogado;
+    if(el){
+        el.innerText = "Funcionário: " + usuarioLogado;
+    }
 
 }
-
-}
-
-
 /* REGISTRAR ENTRADA */
 
 function registrarEntrada(){
