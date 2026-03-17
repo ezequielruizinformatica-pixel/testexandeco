@@ -1,10 +1,14 @@
-let funcionarios = JSON.parse(localStorage.getItem("funcionarios")) || [];
-let registros = JSON.parse(localStorage.getItem("registros")) || [];
+let funcionarios = [];
+let registros = [];
 
-function salvar(){
+function adicionarFuncionario(){
 
-localStorage.setItem("funcionarios", JSON.stringify(funcionarios));
-localStorage.setItem("registros", JSON.stringify(registros));
+let nome=document.getElementById("nomeFuncionario").value;
+
+funcionarios.push(nome);
+
+atualizarSelect();
+atualizarDashboard();
 
 }
 
@@ -17,26 +21,12 @@ select.innerHTML="";
 funcionarios.forEach(f=>{
 
 let option=document.createElement("option");
+
 option.textContent=f;
 
 select.appendChild(option);
 
 });
-
-}
-
-function adicionarFuncionario(){
-
-let nome=document.getElementById("nomeFuncionario").value;
-
-if(nome=="") return;
-
-funcionarios.push(nome);
-
-document.getElementById("nomeFuncionario").value="";
-
-salvar();
-atualizarSelect();
 
 }
 
@@ -67,7 +57,6 @@ saida:""
 
 });
 
-salvar();
 render();
 
 }
@@ -86,7 +75,6 @@ r.saida=hora();
 
 });
 
-salvar();
 render();
 
 }
@@ -116,13 +104,19 @@ tabela.innerHTML+=`
 
 }
 
+function atualizarDashboard(){
+
+document.getElementById("totalFuncionarios").innerText=funcionarios.length;
+
+}
+
 function exportarPDF(){
 
 const { jsPDF } = window.jspdf;
 
-let doc = new jsPDF();
+let doc=new jsPDF();
 
-doc.text("Relatório de Controle de Ponto",14,20);
+doc.text("Relatório de Ponto",14,20);
 
 let dados=[];
 
@@ -150,6 +144,3 @@ startY:30
 doc.save("relatorio_ponto.pdf");
 
 }
-
-atualizarSelect();
-render();
