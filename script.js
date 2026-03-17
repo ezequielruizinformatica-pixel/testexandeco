@@ -118,8 +118,6 @@ tabela.innerHTML+=`
 
 function exportarPDF(){
 
-const { jsPDF } = window.jspdf;
-
 let doc = new jsPDF();
 
 doc.text("Relatório de Controle de Ponto", 14, 20);
@@ -148,3 +146,4 @@ doc.save("relatorio_ponto.pdf");
 }
 atualizarSelect();
 render();
+const { jsPDF } = window.jspdf;
