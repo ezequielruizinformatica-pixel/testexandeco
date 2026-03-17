@@ -180,3 +180,21 @@ doc.save("relatorio_ponto.pdf");
 /* CARREGAR TABELA */
 
 render();
+
+function limparHistorico(){
+
+let confirmar = confirm("Tem certeza que deseja apagar todo o histórico?");
+
+if(confirmar){
+
+localStorage.removeItem("registros");
+
+registros = [];
+
+render();
+
+alert("Histórico apagado com sucesso.");
+
+}
+
+}
