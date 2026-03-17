@@ -6,43 +6,43 @@ background:#f4f6f9;
 
 }
 
-.layout{
+.container{
 
 display:flex;
+height:100vh;
 
 }
 
-.sidebar{
+.menu{
 
 width:220px;
-background:#1f2d3d;
+background:#2c3e50;
 color:white;
-height:100vh;
 padding:20px;
 
 }
 
-.sidebar ul{
+.menu ul{
 
 list-style:none;
 padding:0;
 
 }
 
-.sidebar li{
+.menu li{
 
 padding:12px;
 cursor:pointer;
 
 }
 
-.sidebar li:hover{
+.menu li:hover{
 
-background:#2e4053;
+background:#34495e;
 
 }
 
-.content{
+.dashboard{
 
 flex:1;
 padding:30px;
@@ -67,19 +67,15 @@ gap:20px;
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-flex:1;
-text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+margin-bottom:20px;
 
 }
 
-.box{
+.cards .card{
 
-background:white;
-padding:20px;
-margin-top:20px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+flex:1;
+text-align:center;
 
 }
 
@@ -87,7 +83,7 @@ input,select{
 
 padding:10px;
 border:1px solid #ccc;
-border-radius:6px;
+border-radius:5px;
 
 }
 
@@ -95,14 +91,14 @@ button{
 
 padding:10px 15px;
 border:none;
-border-radius:6px;
+border-radius:5px;
 cursor:pointer;
 
 }
 
 .entrada{
 
-background:#2ecc71;
+background:#27ae60;
 color:white;
 
 }
@@ -114,11 +110,18 @@ color:white;
 
 }
 
+.pdf{
+
+background:#8e44ad;
+color:white;
+
+}
+
 table{
 
 width:100%;
-border-collapse:collapse;
 margin-top:15px;
+border-collapse:collapse;
 
 }
 
