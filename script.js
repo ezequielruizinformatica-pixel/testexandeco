@@ -1,18 +1,10 @@
-let funcionarios = [];
-let registros = [];
+let funcionarios = JSON.parse(localStorage.getItem("funcionarios")) || [];
+let registros = JSON.parse(localStorage.getItem("registros")) || [];
 
-function adicionarFuncionario(){
+function salvar(){
 
-let nome=document.getElementById("nomeFuncionario").value;
-
-if(nome=="") return;
-
-funcionarios.push(nome);
-
-document.getElementById("nomeFuncionario").value="";
-
-atualizarSelect();
-atualizarDashboard();
+localStorage.setItem("funcionarios", JSON.stringify(funcionarios));
+localStorage.setItem("registros", JSON.stringify(registros));
 
 }
 
@@ -25,12 +17,26 @@ select.innerHTML="";
 funcionarios.forEach(f=>{
 
 let option=document.createElement("option");
-
 option.textContent=f;
 
 select.appendChild(option);
 
 });
+
+}
+
+function adicionarFuncionario(){
+
+let nome=document.getElementById("nomeFuncionario").value;
+
+if(nome=="") return;
+
+funcionarios.push(nome);
+
+document.getElementById("nomeFuncionario").value="";
+
+salvar();
+atualizarSelect();
 
 }
 
@@ -61,6 +67,7 @@ saida:""
 
 });
 
+salvar();
 render();
 
 }
@@ -79,6 +86,7 @@ r.saida=hora();
 
 });
 
+salvar();
 render();
 
 }
@@ -94,10 +102,12 @@ registros.forEach(r=>{
 tabela.innerHTML+=`
 
 <tr>
+
 <td>${r.nome}</td>
 <td>${r.data}</td>
 <td>${r.entrada}</td>
 <td>${r.saida}</td>
+
 </tr>
 
 `;
@@ -106,17 +116,11 @@ tabela.innerHTML+=`
 
 }
 
-function atualizarDashboard(){
-
-document.getElementById("totalFuncionarios").innerText=funcionarios.length;
-
-}
-
 function exportarPDF(){
 
 const { jsPDF } = window.jspdf;
 
-let doc=new jsPDF();
+let doc = new jsPDF();
 
 doc.text("Relatório de Controle de Ponto",14,20);
 
@@ -146,3 +150,6 @@ startY:30
 doc.save("relatorio_ponto.pdf");
 
 }
+
+atualizarSelect();
+render();
