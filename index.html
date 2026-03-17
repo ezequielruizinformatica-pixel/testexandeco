@@ -4,23 +4,20 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Sistema de Ponto Escolar</title>
+<title>Controle de Ponto Escolar</title>
 
 <link rel="stylesheet" href="style.css">
 
-<script src="libs/chart.js"></script>
-<script src="libs/jspdf.min.js"></script>
-<script src="libs/autotable.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
 
 </head>
 
 <body>
 
-<div class="layout">
+<div class="container">
 
-<!-- Sidebar -->
-
-<div class="sidebar">
+<aside class="menu">
 
 <h2>🏫 Escola</h2>
 
@@ -28,87 +25,61 @@
 
 <li>Dashboard</li>
 <li>Funcionários</li>
-<li>Registrar Ponto</li>
+<li>Registros</li>
 <li>Relatórios</li>
 
 </ul>
 
-</div>
+</aside>
 
-
-<!-- Conteúdo -->
-
-<div class="content">
+<main class="dashboard">
 
 <header>
 
-<h1>Controle de Ponto</h1>
+<h1>Sistema de Controle de Ponto</h1>
 
 </header>
-
-
-<!-- Cards -->
 
 <div class="cards">
 
 <div class="card">
-
-<h3>Funcionários</h3>
+<h3>Total Funcionários</h3>
 <p id="totalFuncionarios">0</p>
-
 </div>
 
 <div class="card">
-
 <h3>Registros Hoje</h3>
 <p id="registrosHoje">0</p>
-
 </div>
 
 </div>
 
 
-<!-- Cadastro -->
-
-<div class="box">
+<section class="card">
 
 <h2>Cadastrar Funcionário</h2>
 
-<input id="nomeFuncionario" placeholder="Nome do funcionário">
+<input id="nomeFuncionario" placeholder="Nome">
 
 <button onclick="adicionarFuncionario()">Cadastrar</button>
 
-</div>
+</section>
 
 
-<!-- Registrar ponto -->
-
-<div class="box">
+<section class="card">
 
 <h2>Registrar Ponto</h2>
 
 <select id="funcionarioSelect"></select>
 
 <button class="entrada" onclick="registrarEntrada()">Entrada</button>
+
 <button class="saida" onclick="registrarSaida()">Saída</button>
 
-</div>
+</section>
 
 
-<!-- Gráfico -->
-
-<div class="box">
-
-<h2>Horas Trabalhadas</h2>
-
-<canvas id="grafico"></canvas>
-
-</div>
-
-
-<!-- Tabela -->
-
-<div class="box">
+<section class="card">
 
 <h2>Registros</h2>
 
@@ -131,23 +102,22 @@
 
 </table>
 
-</div>
+</section>
 
 
-<!-- PDF -->
+<section class="card">
 
-<div class="box">
+<button class="pdf" onclick="exportarPDF()">
+Exportar relatório PDF
+</button>
 
-<button onclick="exportarPDF()">Exportar Relatório PDF</button>
+</section>
 
-</div>
-
-</div>
+</main>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
