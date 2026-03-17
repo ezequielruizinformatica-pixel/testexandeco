@@ -6,6 +6,8 @@ background:#f4f6f9;
 
 }
 
+/* LAYOUT ADMIN */
+
 .container{
 
 display:flex;
@@ -80,6 +82,8 @@ border-radius:5px;
 
 }
 
+/* BOTÕES */
+
 button{
 
 padding:10px 15px;
@@ -87,6 +91,12 @@ border:none;
 border-radius:5px;
 cursor:pointer;
 font-weight:bold;
+
+}
+
+button:hover{
+
+opacity:0.9;
 
 }
 
@@ -110,6 +120,8 @@ background:#8e44ad;
 color:white;
 
 }
+
+/* TABELA */
 
 table{
 
@@ -139,6 +151,9 @@ tr:hover{
 background:#f2f2f2;
 
 }
+
+/* LOGIN */
+
 .login-body{
 
 background:#f4f6f9;
@@ -146,7 +161,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
-font-family:Segoe UI;
 
 }
 
@@ -199,5 +213,39 @@ background:#34495e;
 
 color:red;
 margin-top:10px;
+
+}
+
+/* PAINEL DO FUNCIONÁRIO */
+
+.painel-funcionario{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100vh;
+
+}
+
+.painel-funcionario h1{
+
+margin-bottom:20px;
+
+}
+
+.painel-funcionario p{
+
+font-size:18px;
+margin-bottom:30px;
+
+}
+
+.painel-funcionario button{
+
+width:220px;
+padding:15px;
+font-size:16px;
+margin:10px;
 
 }
