@@ -5,7 +5,11 @@ function adicionarFuncionario(){
 
 let nome=document.getElementById("nomeFuncionario").value;
 
+if(nome=="") return;
+
 funcionarios.push(nome);
+
+document.getElementById("nomeFuncionario").value="";
 
 atualizarSelect();
 atualizarDashboard();
@@ -90,12 +94,10 @@ registros.forEach(r=>{
 tabela.innerHTML+=`
 
 <tr>
-
 <td>${r.nome}</td>
 <td>${r.data}</td>
 <td>${r.entrada}</td>
 <td>${r.saida}</td>
-
 </tr>
 
 `;
@@ -116,7 +118,7 @@ const { jsPDF } = window.jspdf;
 
 let doc=new jsPDF();
 
-doc.text("Relatório de Ponto",14,20);
+doc.text("Relatório de Controle de Ponto",14,20);
 
 let dados=[];
 
